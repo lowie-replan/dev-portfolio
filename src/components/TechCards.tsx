@@ -1,66 +1,92 @@
 import { FaCode, FaMobileAlt, FaMicrochip, FaPalette } from "react-icons/fa";
 
-const mobile = [];
-const ai = [];
-const others = [];
-
 const TechCards = () => {
+
+    // Web Dev Data
     const webLanguages = [
         {label: "Javascript", color: "#F7DF1E"},
         {label: "Typescript", color: "#3178C6"},
         {label: "PHP", color: "#777BB4"}
     ];
+    const webTech = [
+        {label: "React", color: "#61DAFB"},
+        {label: "Laravel", color: "#FF2D20"},
+        {label: "HTML", color: "#E34F26"},
+        {label: "CSS", color: "#1572B6"},
+        {label: "Bootstrap", color: "#7952B3"}
+    ];
+    const database = [
+        {label: "MySQL", color: "#4479A1"}
+    ];
+
+    //Mobile Dev Data
+    const mobileLanguages = [
+        {label: "Java", color: "#007396"},
+        {label: "Kotlin", color: "#7F52FF"}
+    ];
+
+    const mobileFramework = [
+        {label: "React-Native", color: "#007396"},
+        {label: "XML", color: "#7F52FF"},
+        {label: "Gradle", color: "#7F52FF"},
+    ];
 
     return (
-        <div className="flex-1 items-center grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="bg-white/5 p-5 items-start rounded-xl">
-                <div className="flex gap-5 items-center mb-3">
-                    <div className="p-4 rounded-xl text-accent bg-accent/10 text-2xl"><FaCode/></div>
-                    <h4 className="text-xl font-semibold text-white">Web Development</h4>
-                </div>
-                <div className="flex text-center items-center mb-3">
-                    <p className="text-white text-sm">Languages:</p>
-                    {webLanguages.map((webLang) => (
-                        <div 
-                         style={{backgroundColor: `${webLang.color}1A`, borderColor: `${webLang.color}33`}}
-                         className={`flex gap-3 items-center p-1 px-3 ml-2 rounded-full inline-flex border border-white/5`}
-                        >
-                        <span
-                         style={{color: `${webLang.color}`}}
-                         className="text-xs font-medium">
-                            {webLang.label}
-                        </span>
-                    </div>
-                    ))}
-                </div>
-                <div className="flex text-center items-center">
-                    <p className="text-white text-sm">Frameworks/Tech:</p>
-                    {webLanguages.map((webLang) => (
-                        <div 
-                         style={{backgroundColor: `${webLang.color}1A`, borderColor: `${webLang.color}33`}}
-                         className={`flex gap-3 items-center p-1 px-3 ml-2 rounded-full inline-flex border border-white/5`}
-                        >
-                        <span
-                         style={{color: `${webLang.color}`}}
-                         className="text-xs font-medium">
-                            {webLang.label}
-                        </span>
-                    </div>
-                    ))}
-                </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+                {header: "Web Developmet", icon: <FaCode/> },
+                {header: "Mobile Developmet", icon: <FaMobileAlt/>},
+                {header: "AI & Machine Learning", icon: <FaMicrochip/>},
+                {header: "Design & Dev Tools", icon: <FaPalette/>}
+            ].map((item) => (
                 
-            </div>
-            <div className="bg-white/5">
-                <h6>card 1</h6>
-            </div>
-            <div className="bg-white/5">
-                <h6>card 1</h6>
-            </div>
-            <div className="bg-white/5">
-                <h6>card 1</h6>
-            </div>
+                <div className="bg-accent/5 p-5 items-start rounded-xl">
 
-        </div>
+                    {/* Header Section */}
+                    <div className="flex gap-5 items-center mb-3">
+                        <div className="p-4 rounded-xl text-accent bg-accent/10 text-2xl">{item.icon}</div>
+                        <h4 className="text-xl font-bold text-white">{item.header}</h4>
+                    </div>
+
+                    {/* Description */}
+                    <p className="mb-6 text-zinc-500 text-sm leading-relaxed">
+                        Building scalable, full-stack applications with a focus on 
+                        responsive frontend interfaces and robust backend logic.
+                    </p>
+
+                    {/* Mapping the categories and pills */}
+                    {[
+                        { title: "Languages", data: webLanguages },
+                        { title: "Frameworks & Tech", data: webTech },
+                        { title: "Database", data: database },
+                    ].map((section, idx) => (
+                        <div key={idx} className="mb-5 last:mb-0">
+                            <p className="text-white text-sm font-semibold mb-2">
+                                {section.title}
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {section.data.map((item) => (
+                                    <div
+                                    key={item.label}
+                                    style={{
+                                        backgroundColor: `${item.color}1A`,
+                                        borderColor: `${item.color}33`
+                                    }}
+                                    className="px-3 py-1 rounded-full border flex items-center">
+                                        <span 
+                                        style={{color:`${item.color}`}}
+                                        className="text-xs font-medium">
+                                            {item.label}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div> 
     );
 };
 
