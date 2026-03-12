@@ -9,7 +9,7 @@ const About = () => {
                     <h1 className="p-4 text-2xl md:text-3xl font-semibold text-accent flex items-center whitespace-nowrap">Technical Toolkit</h1>
                 </div>
                 <div className="text-zinc-500">
-                    <p>A curated collection of frameworks, languages, and technologies I used to build scalable AI solutions, web and mobile applications.</p>
+                    <p>A curated collection of frameworks, languages, and technologies I used to build and develop scalable AI solutions, web and mobile applications.</p>
                 </div>
                 {/* <div className="h-[3px] w-full bg-accent"></div> */}
             </div>
