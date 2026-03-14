@@ -1,28 +1,38 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
+import TechToolkit from './components/toolkits/TechToolkit';
+import Projects from './components/projects/Projects';
 import Footer from './components/Footer';
-import TechCards from './components/TechCards';
 
 function App() {
+
   return (
+    
     <main className='bg-background'>
+
+      {/* ======== NAVBAR ======== */}
       <Navbar/>
 
+      {/* ======== HERO SECTION ======== */}
       <section id='home'>
         <Hero name="Lowie John Replan"/>
       </section>
 
-      <section id='about'>
-        <About></About>
+      {/* ======== TOOLKIT SECTION ======== */}
+      <section id='tech_toolkit' className='mb-15'>
+        <TechToolkit/>
       </section>
       
-      <section id='projects'>
+      {/* ======== PROJECTS SECTION ======== */}
+      <section id='projects' className='mb-15'>
         <Projects/>
       </section>
+
       <hr className='m-12 border-zinc-600'/>
+
+      {/* ======== FOOTER ======== */}
       <Footer/>
+
     </main>
   );
 }
