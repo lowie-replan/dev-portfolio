@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-type SectionId = 'home' | 'about' | 'projects' | 'contact';
+type SectionId = 'home' | 'tech_toolkit' | 'projects' | 'contact';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +9,7 @@ const Navbar = () => {
     const activeClass = "bg-accent text-background rounded-full";
     const inactiveClass = "hover:bg-accent/20 hover:rounded-full";
 
+    // ======== HANDLE USEEFFECT ======== 
     useEffect(() => {
         const observerOptions: IntersectionObserverInit = {
             rootMargin: '-30% 0px -60% 0px',
@@ -24,7 +25,7 @@ const Navbar = () => {
         };
 
         const observer = new IntersectionObserver(handleIntersect, observerOptions);
-        const sections: SectionId[] = ['home', 'about', 'projects', 'contact'];
+        const sections: SectionId[] = ['home', 'tech_toolkit', 'projects', 'contact'];
 
         sections.forEach((id) => {
             const el = document.getElementById(id);
@@ -35,10 +36,11 @@ const Navbar = () => {
     }, []);
 
     
+    // ======== RENDER NAVIGATION LINKS ========
     const renderNavLinks = (isMobile: boolean) => {
         const links: { name: string; id: SectionId }[] = [
             { name: 'Home', id: 'home' },
-            { name: 'About', id: 'about' },
+            { name: 'Technical Toolkit', id: 'tech_toolkit' },
             { name: 'Projects', id: 'projects' },
             { name: 'Contact', id: 'contact' },
         ];
@@ -60,16 +62,22 @@ const Navbar = () => {
     };
 
     return (
+
+        // ======== NAVBAR ========
         <nav className="bg-background/20 backdrop-blur-sm p-4 px-8 md:px-12 text-white sticky top-0 z-50 shadow-[0_4px_15px_0_rgba(178,250,255,0.1)]">
             <div className="flex justify-between items-center max-w-7xl mx-auto">
+
+                {/* ======== NAV LOGO ======== */}
                 <div className="text-white hover:cursor-pointer">
-                    <img src="./images/Personal_Logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
+                    <img src="./images/Logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
                 </div>
 
+                {/* ======== NAV LINKS ======== */}
                 <ul className="text-white hidden md:flex gap-8 items-center">
                     {renderNavLinks(false)}
                 </ul>
 
+                {/* ======== NAV BUTTON ======== */}
                 <button 
                     className="md:hidden text-2xl focus:outline-none hover:cursor-pointer" 
                     onClick={() => setIsOpen(!isOpen)}
@@ -79,7 +87,11 @@ const Navbar = () => {
             </div>
             
             {isOpen && (
-                <ul className="absolute top-full left-0 w-full bg-background/90 backdrop-blur-md flex flex-col gap-4 p-6 animate-fadeIn md:hidden text-center items-center">
+                <ul className="
+                    absolute top-full left-0 w-full bg-background/90 
+                    backdrop-blur-md flex flex-col gap-4 p-6 animate-fadeIn 
+                    md:hidden text-center items-center"
+                >
                     {renderNavLinks(true)}
                 </ul>
             )}

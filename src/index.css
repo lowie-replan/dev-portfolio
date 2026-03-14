@@ -41,45 +41,16 @@ html {
   animation: blink 0.8s step-end infinite;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px); /* This controls how high it floats */
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
 @keyframes smoothFloat {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Subtle lift */
+    transform: translateY(-10px);
   }
 }
 
 .animate-smooth-float {
   animation: smoothFloat var(--float-duration, 3s) ease-in-out infinite;
   animation-delay: var(--float-delay, 0s);
-}
-
-
-
-/* ========== PROJECTS SECTION CSS STYLES ========== */
-
-.custom-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-.custom-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }

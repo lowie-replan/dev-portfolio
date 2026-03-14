@@ -1,14 +1,18 @@
 import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa";
 
 const SocialLinks = () => {
+
+  // ======== LINK DATA ========
   const socials = [
-    { id: 1, icon: <FaGithub />, href: "https://github.com/yourusername", label: "GitHub" },
-    { id: 2, icon: <FaLinkedin />, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+    { id: 1, icon: <FaGithub />, href: "https://github.com/lowie-replan", label: "GitHub" },
+    { id: 2, icon: <FaLinkedin />, href: "https://linkedin.com/in/lowie-replan", label: "LinkedIn" },
     { id: 3, icon: <FaFacebook />, href: "https://facebook.com/yourusername", label: "Facebook" },
-    { id: 4, icon: <FaEnvelope />, href: "mailto:your@email.com", label: "Email" },
+    { id: 4, icon: <FaEnvelope />, href: "mailto:replanlowiejohn@gmail.com", label: "Email" },
   ];
 
   return (
+
+    // ======== LINK HOLDER ========
     <div className="flex gap-6 items-center">
       {socials.map((social) => (
         <a
