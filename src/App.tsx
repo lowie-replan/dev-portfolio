@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechToolkit from './components/toolkits/TechToolkit';
 import Projects from './components/projects/Projects';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -26,6 +27,11 @@ function App() {
       {/* ======== PROJECTS SECTION ======== */}
       <section id='projects' className='mb-15'>
         <Projects/>
+      </section>
+
+      {/* ======== CONTACT SECTION ======== */}
+      <section id='contact' className='mb-15'>
+        <Contact/>
       </section>
 
       <hr className='m-12 border-zinc-600'/>
