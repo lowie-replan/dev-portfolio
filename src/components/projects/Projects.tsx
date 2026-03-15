@@ -9,7 +9,7 @@ const Projects = () => {
             {/* ======== SECTION HEADER ======== */}
             <div className="flex items-center">
                 <div className="h-[30px] w-[8px] bg-accent rounded-full"></div>
-                <h1 className="p-4 text-2xl md:text-3xl font-semibold text-accent flex items-center whitespace-nowrap">Works & Projects</h1>
+                <h1 className="p-4 text-2xl md:text-3xl font-bold text-accent flex items-center whitespace-nowrap">Works & Projects</h1>
             </div>
 
             {/* ======== SECTION DESCRIPTION ======== */}
@@ -27,16 +27,15 @@ const Projects = () => {
                 {/* ======== CARD BODY ======== */}
                 {projectData.map((data) => (
                     <div className="
-                        flex flex-col md:flex-row justify-between 
-                        grid grid-cols-1 md:grid-cols-2 bg-accent/5 p-5 
-                        rounded-xl gap-5 border border-accent/10">
+                        grid grid-cols-1 lg:grid-cols-2 bg-accent/5 p-5
+                        rounded-xl gap-5 border border-accent/10 items-center">
 
                         {/* ======== CARD IMAGE ======== */}
                         <div>
                             <img 
                                 src={data.imgSrc} 
                                 alt="" 
-                                className="w-full h-full aspect-video object-cover rounded-xl border border-accent/10"
+                                className="w-full h-auto aspect-video object-cover rounded-xl border border-accent/10"
                             />
                         </div>
 
@@ -44,7 +43,7 @@ const Projects = () => {
                         <div className="flex flex-col gap-3">
 
                             {/* ======== CARD TITLE & DESCRIPTION ======== */}
-                            <div className="text-accent font-semibold text-xl">{data.cardTitle}</div>
+                            <div className="text-accent font-bold text-lg md:text-xl">{data.cardTitle}</div>
                             <div className="flex flex-col gap-5">
                                 <p className="text-zinc-500 leading-relaxed text-base">
                                     {data.description}

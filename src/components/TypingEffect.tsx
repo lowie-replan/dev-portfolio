@@ -6,7 +6,7 @@ const TypingEffect = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
   const [wordIndex, setWordIndex] = useState(0);
-  const textToType = ["Full-Stack Developer", "Mobile Application Developer", "AI & Machine Learning"];
+  const textToType = ["Full-Stack Developer", "Mobile App Developer", "AI & Machine Learning"];
   const typingSpeed = 100;
   const pauseTime = 2000;
 
