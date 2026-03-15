@@ -10,7 +10,7 @@ const TechToolkit = () => {
                 {/* ======== SECTION HEADER ======== */}
                 <div className="flex items-center">
                     <div className="h-[30px] w-[8px] bg-accent rounded-full"></div>
-                    <h1 className="p-4 text-2xl md:text-3xl font-semibold text-accent flex items-center whitespace-nowrap">Technical Toolkit</h1>
+                    <h1 className="p-4 text-2xl md:text-3xl font-bold text-accent flex items-center whitespace-nowrap">Technical Toolkit</h1>
                 </div>
 
                 {/* ======== SECTION DESCRIPTION ======== */}

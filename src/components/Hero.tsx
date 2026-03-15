@@ -11,12 +11,12 @@ const Hero: React.FC<HeroProps> = ({ name }) => {
 
     return (
 
-        <div className="max-w-7xl mx-auto px-8 md:px-12 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="flex-1 flex flex-col gap-2 order-2 md:order-1 md:items-start md:text-left text-center items-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-24 lg:py-32 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="flex-1 flex flex-col gap-2 order-2 lg:order-1 lg:items-start lg:text-left text-center items-center">
 
                 {/* ======== INTRODUCTION ======== */}
                 <span className="text-accent">Hi, I am</span>
-                <h1 className="text-3xl md:text-5xl font-semibold text-white">{name}</h1>
+                <h1 className="text-3xl md:text-5xl font-bold text-white">{name}</h1>
                 <span><TypingEffect/></span>
 
                 {/* ======== HERO BUTTONS ======== */}
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ name }) => {
             </div>
 
             {/* ======== HERO PICTURE ======== */}
-            <div className="flex-1 flex justify-center order-1 md:order-2">
+            <div className="flex-1 flex justify-center order-1 lg:order-2">
                 <img 
                 src="./images/Personal_Logo.png" 
                 alt="Lowie John Replan" 

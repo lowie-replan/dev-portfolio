@@ -3,7 +3,7 @@ const classContent = "hover:bg-accent hover:text-background hover:rounded-full p
 const Footer = () => {
     return (
         <footer>
-            <div className="text-center items-center">
+            <div className="text-center items-center mx-8 lg:mx-12">
 
                 {/* ======== FOOTER CONTENT ======== */}
                 <div className='flex flex-col mb-5 items-center text-center'>
@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className='mb-3 text-xs text-zinc-600'>Full-Stack Developer | Mobile Application Developer | AI & Machine Learning</div>
 
                     {/* ======== NAVIGATIONS ======== */}
-                    <ul className="text-white text-xs flex gap-8 items-start hover:cursor-pointer border border-zinc-600 py-1 rounded-full">
+                    <ul className="text-white text-xs flex gap-3 md:gap-8 items-start hover:cursor-pointer border border-zinc-600 py-1 rounded-full">
                         <li><a href="#home" className={classContent}>Home</a></li>
                         <li><a href="#about" className={classContent}>About</a></li>
                         <li><a href="#projects" className={classContent}>Projects</a></li>

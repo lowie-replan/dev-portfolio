@@ -64,7 +64,7 @@ const Navbar = () => {
     return (
 
         // ======== NAVBAR ========
-        <nav className="bg-background/20 backdrop-blur-sm p-4 px-8 md:px-12 text-white sticky top-0 z-50 shadow-[0_4px_15px_0_rgba(178,250,255,0.1)]">
+        <nav className="bg-background/20 backdrop-blur-sm p-4 px-8 lg:px-12 text-white sticky top-0 z-50 shadow-[0_4px_15px_0_rgba(178,250,255,0.1)]">
             <div className="flex justify-between items-center max-w-7xl mx-auto">
 
                 {/* ======== NAV LOGO ======== */}
@@ -73,13 +73,13 @@ const Navbar = () => {
                 </div>
 
                 {/* ======== NAV LINKS ======== */}
-                <ul className="text-white hidden md:flex gap-8 items-center">
+                <ul className="text-white hidden lg:flex gap-8 items-center">
                     {renderNavLinks(false)}
                 </ul>
 
                 {/* ======== NAV BUTTON ======== */}
                 <button 
-                    className="md:hidden text-2xl focus:outline-none hover:cursor-pointer" 
+                    className="lg:hidden text-2xl focus:outline-none hover:cursor-pointer" 
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? '✕' : '☰'}
@@ -90,7 +90,7 @@ const Navbar = () => {
                 <ul className="
                     absolute top-full left-0 w-full bg-background/90 
                     backdrop-blur-md flex flex-col gap-4 p-6 animate-fadeIn 
-                    md:hidden text-center items-center"
+                    lg:hidden text-center items-center"
                 >
                     {renderNavLinks(true)}
                 </ul>

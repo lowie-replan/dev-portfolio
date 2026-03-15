@@ -52,7 +52,7 @@ export const projectData: Projcards[] = [
         ]
     },
     {
-        imgSrc: "./images/projects/optispeak_ml.png", 
+        imgSrc: "./images/Logo.png", 
         cardTitle: "Mr. Squidee Point of Sale (POS) System", 
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur autem corrupti itaque dolor aperiam voluptatibus dignissimos eos nemo laborum distinctio quos dolores.",
         tags: [
