@@ -8,7 +8,7 @@ const Footer = () => {
                 {/* ======== FOOTER CONTENT ======== */}
                 <div className='flex flex-col mb-5 items-center text-center'>
                     <p className='mb-2 italic text-xs text-zinc-600'>"The computer was born to solve problems that did not exist before."— Bill Gates</p>
-                    <img src="./images/Personal_Logo.png" className="w-10 h-10 object-cotain mb-2" alt="" />
+                    <img src="./images/Logo.png" className="w-10 h-10 object-cotain mb-2" alt="" />
                     <div className="text-bold text-accent font-semibold">Lowie John Replan</div>
                     <div className='mb-3 text-xs text-zinc-600'>Full-Stack Developer | Mobile Application Developer | AI & Machine Learning</div>
 
@@ -21,16 +21,16 @@ const Footer = () => {
                     </ul>
 
                     {/* ======== SOCIAL LINKS ======== */}
-                    <div className='mt-3'>
+                    <div className='mt-3 flex gap-3'>
                         <SocialLinks/>
                     </div>
                 </div>
 
-                {/* ======== CREDITS ======== */}
-                <div>
-                    <div className='text-center text-xs p-2 border-t border-white'>
-                        <p className='text-zinc-500'>© {new Date().getFullYear()} Lowie John Replan</p>
-                    </div>
+            </div>
+            {/* ======== CREDITS ======== */}
+            <div>
+                <div className='text-center text-xs p-2 border-t border-white'>
+                    <p className='text-zinc-500'>© {new Date().getFullYear()} Lowie John Replan</p>
                 </div>
             </div>
         </footer>
