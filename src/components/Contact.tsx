@@ -21,8 +21,8 @@ const Contact = () => {
                         I am currently open to new opportunities and collaborations. 
                         Whether you have a question or just want to say hi, my inbox is always open!
                     </p>
-                    <div className="flex gap-3 items-center text-accent mb-3"><FaEnvelope className="text-xl"/><span className="text-zinc-500">replanlowiejohn@gmail.com</span></div>
-                    <div className="flex gap-3 items-center text-accent"><FaPhone className="text-xl"/><span className="text-zinc-500">+63 962 844 9823</span></div>
+                    <div className="flex gap-3 items-center text-accent mb-3"><FaEnvelope className="text-lg"/><span className="text-zinc-500">replanlowiejohn@gmail.com</span></div>
+                    <div className="flex gap-3 items-center text-accent"><FaPhone className="text-lg"/><span className="text-zinc-500">+63 962 844 9823</span></div>
                 </div>
 
                 {/* ======== RIGHT COLUMN (INPUT FORMS) ======== */}
@@ -62,7 +62,6 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-        
     );
 };
 

@@ -69,7 +69,9 @@ const Navbar = () => {
 
                 {/* ======== NAV LOGO ======== */}
                 <div className="text-white hover:cursor-pointer">
-                    <img src="./images/Logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
+                    <a href="#home">
+                        <img src="./images/Personal_Logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
+                    </a>
                 </div>
 
                 {/* ======== NAV LINKS ======== */}
