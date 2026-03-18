@@ -4,7 +4,7 @@ const Projects = () => {
 
     return (
 
-        <div className="flex-1 items-center px-8 md:px-12">
+        <div className="max-w-7xl mx-auto flex-1 items-center px-8 md:px-12">
 
             {/* ======== SECTION HEADER ======== */}
             <div className="flex items-center">

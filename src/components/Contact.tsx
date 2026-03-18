@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone } from "react-icons/fa";
 const Contact = () => {
     return (
 
-        <div className="mx-8 md:mx-12">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
 
             {/* ======== SECTION HEADER ======== */}
             <div className="flex items-center">
@@ -12,7 +12,7 @@ const Contact = () => {
             </div>
             
             {/* ======== FORM WRAPPER ======== */}
-            <div className="grid grid-gols-1 lg:grid-cols-2 gap-8 bg-accent/5 p-6 rounded-xl border border-accent/10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-accent/5 p-6 rounded-xl border border-accent/10">
 
                 {/* ======== LEFT COLUMN (TEXTS) ======== */}
                 <div className="">
@@ -57,7 +57,12 @@ const Contact = () => {
                                 text-white p-2 rounded-lg"
                             >
                         </textarea>
-                        <button className="p-3 bg-accent rounded-xl">Send Message</button>
+                        <button className="
+                            p-3 bg-accent rounded-xl hover:scale-102 
+                            transition-all duration-500 hover:shadow-[0_0_15px_0_rgba(178,250,255,0.2)]"
+                            >
+                            Send Message
+                        </button>
                     </form>
                 </div>
             </div>

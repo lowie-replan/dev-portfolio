@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-type SectionId = 'home' | 'tech_toolkit' | 'projects' | 'contact';
+type SectionId = 'home' | 'about' | 'tech_toolkit' | 'projects' | 'contact';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ const Navbar = () => {
         };
 
         const observer = new IntersectionObserver(handleIntersect, observerOptions);
-        const sections: SectionId[] = ['home', 'tech_toolkit', 'projects', 'contact'];
+        const sections: SectionId[] = ['home', 'about', 'tech_toolkit', 'projects', 'contact'];
 
         sections.forEach((id) => {
             const el = document.getElementById(id);
@@ -40,6 +40,7 @@ const Navbar = () => {
     const renderNavLinks = (isMobile: boolean) => {
         const links: { name: string; id: SectionId }[] = [
             { name: 'Home', id: 'home' },
+            { name: 'About', id: 'about' },
             { name: 'Technical Toolkit', id: 'tech_toolkit' },
             { name: 'Projects', id: 'projects' },
             { name: 'Contact', id: 'contact' },

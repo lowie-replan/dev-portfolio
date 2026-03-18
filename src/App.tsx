@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/about/About';
 import TechToolkit from './components/toolkits/TechToolkit';
 import Projects from './components/projects/Projects';
 import Contact from './components/Contact';
@@ -19,6 +20,11 @@ function App() {
         <Hero name="Lowie John Replan"/>
       </section>
 
+      {/* ======== ABOUT SECTION ======== */}
+      <section id='about' className='mb-15'>
+        <About/>
+      </section>
+
       {/* ======== TOOLKIT SECTION ======== */}
       <section id='tech_toolkit' className='mb-15'>
         <TechToolkit/>
@@ -33,8 +39,6 @@ function App() {
       <section id='contact' className='mb-15'>
         <Contact/>
       </section>
-
-      <hr className='m-12 border-zinc-600'/>
 
       {/* ======== FOOTER ======== */}
       <Footer/>
