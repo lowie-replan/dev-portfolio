@@ -1,15 +1,15 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/about/About';
-import TechToolkit from './components/toolkits/TechToolkit';
-import Projects from './components/projects/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './pages/portfolio/Navbar';
+import Hero from './pages/portfolio/Hero';
+import About from './pages/portfolio/About';
+import TechToolkit from './pages/portfolio/TechToolkit';
+import Projects from './pages/portfolio/Projects';
+import Contact from './pages/portfolio/Contact';
+import Footer from './pages/portfolio/Footer';
+import AdminLogin from './pages/admin/Login';
 
-function App() {
-
+const Portfolio = () => {
   return (
-    
     <main className='bg-background'>
 
       {/* ======== NAVBAR ======== */}
@@ -44,6 +44,18 @@ function App() {
       <Footer/>
 
     </main>
+  );
+};
+
+function App() {
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+      </Routes>
+    </Router>
   );
 }
 

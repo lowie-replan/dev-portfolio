@@ -1,5 +1,5 @@
-import TypingEffect from './TypingEffect';
-import SocialLinks from './SocialLinks';
+import TypingEffect from '../../components/TypingEffect';
+import SocialLinks from '../../components/SocialLinks';
 
 interface HeroProps {
   name: string;

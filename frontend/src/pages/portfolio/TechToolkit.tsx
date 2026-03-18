@@ -1,4 +1,4 @@
-import TechCards from "./TechCards";
+import TechCards from "../../components/toolkits/TechCards";
 
 const TechToolkit = () => {
     return (
