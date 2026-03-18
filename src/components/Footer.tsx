@@ -21,6 +21,7 @@ const Footer = () => {
                         border border-zinc-400 md:rounded-full md:py-1 rounded-xl"
                     >
                         <li><a href="#home" className={classContent}>Home</a></li>
+                        <li><a href="#about" className={classContent}>About</a></li>
                         <li><a href="#tech_toolkit" className={classContent}>Technical Toolkit</a></li>
                         <li><a href="#projects" className={classContent}>Projects</a></li>
                         <li><a href="#contact" className={classContent}>Contact</a></li>

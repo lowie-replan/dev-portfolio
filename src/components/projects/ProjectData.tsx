@@ -40,7 +40,8 @@ export const projectData: Projcards[] = [
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur autem corrupti itaque dolor aperiam voluptatibus dignissimos eos nemo laborum distinctio quos dolores.",
         tags: [
             {label: "Mobile Development"},
-            {label: "Machine Learning"}
+            {label: "Machine Learning"},
+            {label: "Computer Vision"}
         ],
         techStack: [
             {label: "Python", color: "#3776AB"},
