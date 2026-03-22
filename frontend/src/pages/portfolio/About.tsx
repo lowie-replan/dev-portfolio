@@ -1,4 +1,4 @@
-import {aboutData} from "./AboutData";
+import {aboutData} from "../../components/about/AboutData";
 
 const About = () => {
     return (

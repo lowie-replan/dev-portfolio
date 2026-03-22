@@ -1,4 +1,4 @@
-import SocialLinks from './SocialLinks';
+import SocialLinks from '../../components/SocialLinks';
 const classContent = "hover:bg-accent hover:text-background hover:rounded-full px-4 py-1 transition-all duration-500";
 const Footer = () => {
     return (
