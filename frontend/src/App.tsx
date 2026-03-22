@@ -7,6 +7,7 @@ import Projects from './pages/portfolio/Projects';
 import Contact from './pages/portfolio/Contact';
 import Footer from './pages/portfolio/Footer';
 import AdminLogin from './pages/admin/Login';
+import AdminHome from './pages/admin/Dashboard';
 
 const Portfolio = () => {
   return (
@@ -53,7 +54,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/Admin">
+          <Route path="Login" element={<AdminLogin />} />
+          <Route path="Dashboard" element={<AdminHome />} />
+        </Route>
       </Routes>
     </Router>
   );
