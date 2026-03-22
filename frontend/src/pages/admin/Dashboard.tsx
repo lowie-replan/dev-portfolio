@@ -1,63 +1,56 @@
 import { useState } from "react";
-import { FaGithub, FaEnvelope, FaUsers, FaCalendar } from "react-icons/fa";
-import AdminProject from "./AdminProject";
+import { FaGithub, FaEnvelope, FaUsers, FaCalendar, FaPlus, FaBriefcase, FaLaptopCode, FaAward, FaTachometerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+
+const categories = [
+    {link: "/Admin/AdminProject", icon: <FaBriefcase/>, title: "Projects", total: "5"},
+    {link: "/Admin/AdminToolkits", icon: <FaLaptopCode/>, title: "Technologies", total: "16"},
+    {link: "/Admin/AdminCerts", icon: <FaAward/>, title: "Credentials", total: "6"}
+];
 
 
 const AdminHome = () => {
-    const [activeTab, setActiveTab] = useState('overview');
+    // const [activeTab, setActiveTab] = useState('Projects');
     const cardElems = "bg-accent/5 border border-accent/10 flex flex-col md:flex-row rounded-xl justify-between gap-4 items-center p-4";
     return (
-        <div className="bg-background min-h-screen">
-
-            {/* ======== DASHBOARD NAVBAR ======== */}
-            <nav className="bg-background/20 backdrop-blur-sm p-4 px-8 lg:px-12 text-white sticky top-0 z-50 shadow-[0_4px_15px_0_rgba(178,250,255,0.1)]">
-                <div className="flex justify-between items-center max-w-7xl mx-auto">
-
-                    {/* ======== NAV LOGO ======== */}
-                    <div className="text-white hover:cursor-pointer">
-                        <a href="#">
-                            <img src="../images/Personal_Logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
-                        </a>
-                    </div>
-                    <div className="flex gap-8">
-                        <ul className="flex gap-8">
-                            <li className="hover:text-accent flex gap-3 items-center"><FaEnvelope></FaEnvelope><a href="">Messages</a></li>
-                            <li className="hover:text-accent flex gap-3 items-center"><FaUsers></FaUsers><a href="">Visits</a></li>
-                        </ul>
-                        <div className="text-white hover:cursor-pointer">
-                            <a href="#">
-                                <img src="../images/Profile_Picture.jpg" alt="Logo" className="w-10 h-10 object-contain rounded-full border border-accent"/>
-                            </a>
+        <div className="px-8 lg:px-12">
+            <div className="mt-8 flex gap-4 text-white text-4xl">
+                <span><FaTachometerAlt></FaTachometerAlt></span>
+                <h1 className="font-bold">Dashboard</h1>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 py-8 bg-background text-white gap-6">
+                {categories.map((data) => (
+                    <div className="
+                        flex flex-col gap-4 md:gap-8 p-8 border 
+                        border-accent/10 rounded-xl bg-accent/3 
+                        hover:scale-102 transition-all duration-500
+                        hover:shadow-[0_0_15px_0_rgba(178,250,255,0.2)]
+                        hover:border-accent/30"
+                        >
+                        <div className="flex items-center gap-4 text-2xl md:text-3xl text-accent">
+                            <span>{data.icon}</span>
+                            <h1 className="font-semibold">{data.title}</h1>
+                        </div>
+                        <div className="border border-accent/10"/>
+                        <div>
+                            <h3 className="text-white text-xl md:text-2xl font-semibold">Total</h3>
+                            <h1 className="text-zinc-600 text-3xl font-bold">{data.total}</h1>
+                        </div>
+                        <div className="flex justify-end">
+                            <Link to={`${data.link}`}>
+                                <button className="
+                                    border border-accent px-3 py-1 bg-accent/5
+                                    rounded-full text-accent hover:cursor-pointer 
+                                    hover:bg-accent transition-all duration-500
+                                    hover:text-background">
+                                    View {data.title}
+                                </button>
+                            </Link>
                         </div>
                     </div>
-                </div>
-            </nav>
-
-            <div className="p-8 bg-background min-h-screen text-white">
-                {/* he Selection Header */}
-                <div className="flex gap-12 mb-8 justify-center">
-                    {['Projects', 'Technical Toolkits', 'Certificates & Achievements'].map((tab) => (
-                    <button
-                        key={tab}
-                        onClick={() => setActiveTab(tab)}
-                        className={`p-2 capitalize transition-all ${
-                        activeTab === tab 
-                        ? "border border-accent text-accent items-center rounded-xl transition-all" 
-                        : "text-zinc-500 hover:text-zinc-300 rounded-xl transition-all"
-                        }`}
-                    >
-                        {tab}
-                    </button>
-                    ))}
-                </div>
-
-                {/* The Section Display */}
-                <div className="mt-4 h-[500px] overflow-y-auto custom-scrollbar">
-                    {activeTab === 'Projects' && <AdminProject />}
-                    {/* {activeTab === 'projects' && <ProjectsComponent />}
-                    {activeTab === 'analytics' && <AnalyticsComponent />} */}
-                </div>
-                </div>
+                ))}
+            </div>
         </div>
     );
 };
