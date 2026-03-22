@@ -8,6 +8,10 @@ import Contact from './pages/portfolio/Contact';
 import Footer from './pages/portfolio/Footer';
 import AdminLogin from './pages/admin/Login';
 import AdminHome from './pages/admin/Dashboard';
+import AdminProject from './pages/admin/AdminProject';
+import AdminToolkits from './pages/admin/AdminToolkits';
+import AdminCerts from './pages/admin/AdminCerts';
+import AdminLayout from './pages/admin/AdminLayout';
 
 const Portfolio = () => {
   return (
@@ -54,10 +58,13 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/Admin">
-          <Route path="Login" element={<AdminLogin />} />
+        <Route path="/Admin" element={<AdminLayout />}>
           <Route path="Dashboard" element={<AdminHome />} />
+          <Route path="AdminProject" element={<AdminProject />} />
+          <Route path="AdminToolkits" element={<AdminToolkits />} />
+          <Route path="AdminCerts" element={<AdminCerts />} />
         </Route>
+        <Route path="/Admin/Login" element={<AdminLogin />} />
       </Routes>
     </Router>
   );
