@@ -1,3 +1,4 @@
+import { FaAward } from "react-icons/fa";
 import {aboutData} from "../../components/about/AboutData";
 
 const About = () => {
@@ -24,7 +25,11 @@ const About = () => {
                 </p>
 
                 {/* ======== MAPPING ACHIEVEMENTS AND CERTIFICATIONS ======== */}
-                <h2 className="text-white text-lg md:text-xl font-bold mb-4">Achievements & Certifications</h2>
+                <div className="flex flex-row items-center mb-4 gap-2">
+                    <FaAward className="text-2xl text-white"/>
+                    <h2 className="text-white text-lg md:text-2xl font-bold">Achievements & Certifications</h2>
+                </div>
+                
                 <div className="flex gap-5 flex-col md:flex-row md:flex-wrap">
                     {aboutData.map((data) => (
                         <div className="border border-accent/10 items-center px-4 py-2 rounded-xl bg-accent/5 text-sm md:text-base">
