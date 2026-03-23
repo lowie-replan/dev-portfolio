@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { FaGithub, FaEnvelope, FaUsers, FaCalendar, FaPlus, FaBriefcase, FaLaptopCode, FaAward, FaTachometerAlt } from "react-icons/fa";
+import { FaBriefcase, FaLaptopCode, FaAward, FaTachometerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -11,8 +10,7 @@ const categories = [
 
 
 const AdminHome = () => {
-    // const [activeTab, setActiveTab] = useState('Projects');
-    const cardElems = "bg-accent/5 border border-accent/10 flex flex-col md:flex-row rounded-xl justify-between gap-4 items-center p-4";
+    
     return (
         <div className="px-8 lg:px-12">
             <div className="mt-8 flex gap-4 text-white text-4xl">
