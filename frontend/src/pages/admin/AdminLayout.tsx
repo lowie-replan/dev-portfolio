@@ -17,8 +17,8 @@ const AdminLayout = () => {
                     </div>
                     <div className="flex gap-8">
                         <ul className="flex gap-8">
-                            <li className="hover:text-accent flex gap-3 items-center"><a href=""><FaEnvelope/></a></li>
-                            <li className="hover:text-accent flex gap-3 items-center"><a href=""><FaUsers/></a></li>
+                            <li className="hover:text-accent flex gap-3 items-center text-xl"><a href=""><FaEnvelope/></a></li>
+                            <li className="hover:text-accent flex gap-3 items-center text-xl"><a href=""><FaUsers/></a></li>
                         </ul>
                         <div className="text-white hover:cursor-pointer">
                             <a href="#">
