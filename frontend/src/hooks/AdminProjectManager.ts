@@ -14,6 +14,7 @@ export const AdminProjectManager = () => {
     const [description, setDescription] = useState("");
     const [isSaving, setIsSaving] = useState(false);
     const [editingId, setEditingId] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
 
     // ======== MODAL STATES ========
@@ -31,13 +32,23 @@ export const AdminProjectManager = () => {
 
 
     const fetchProjects = async () => {
-        const { data, error } = await supabase
-            .from('projects')
-            .select('*')
-            .order('created_at', { ascending: false });
+        setIsLoading(true);
+        try {
+            const { data, error } = await supabase
+                .from('projects')
+                .select('*')
+                .order('created_at', { ascending: false });
 
-        if (error) console.error("Error fetching:", error.message);
-        else setProjects(data || []);
+            if (error) {
+                console.error("Error fetching:", error.message);
+            } else {
+                setProjects(data || []);
+            }
+        } catch (err) {
+            console.error("Unexpected error:", err);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     useEffect(() => {
@@ -236,6 +247,7 @@ export const AdminProjectManager = () => {
         projects,
         modalOpen,
         setModalOpen,
+        isLoading,
         isSaving,
         editingId,
         title, setTitle,

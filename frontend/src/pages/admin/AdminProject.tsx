@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { AdminProjectManager } from "../../hooks/AdminProjectManager";
-import { AdminProjectItem } from "./AdminProjectItem";
-import AdminProjectModal from "./AdminProjectModal";
+import { AdminProjectItem } from "../../components/admin/AdminProjectItem";
+import AdminProjectModal from "../../components/admin/AdminProjectModal";
 import { FaArrowLeft, FaBriefcase, FaPlus } from "react-icons/fa";
 
 const AdminProject = () => {
@@ -8,7 +9,8 @@ const AdminProject = () => {
         projects, 
         modalOpen, 
         setModalOpen, 
-        handlers, 
+        handlers,
+        isLoading, 
         isSaving,
         editingId,
 
@@ -27,11 +29,13 @@ const AdminProject = () => {
         <div className="bg-background min-h-screen px-8 lg:px-12 mt-8">
 
             {/* ======== NAVIGATION ======== */}
-            <div className="flex gap-2 items-center text-zinc-600 mb-4 hover:cursor-pointer hover:text-zinc-400 transition-colors">
-                <FaArrowLeft />
-                <span>Back to Dashboard</span>
-            </div>
-
+            <Link to={"/Admin/Dashboard"}>
+                <div className="flex gap-2 items-center text-zinc-600 mb-4 hover:cursor-pointer hover:text-zinc-400 transition-colors duration-300">
+                    <FaArrowLeft />
+                    <span>Back to Dashboard</span>
+                </div>
+            </Link>
+            
             <div className="flex justify-between mb-8">
 
                 {/* ======== HEADER ======== */}
@@ -51,7 +55,14 @@ const AdminProject = () => {
 
             {/* ======== PROJECT LIST ======== */}
             <div className="h-[calc(100vh-240px)] overflow-y-auto scrollbar-hide flex flex-col gap-4">
-                {projects.length > 0 ? (
+                {isLoading ? (
+                    [1, 2, 3, 4].map((skeleton) => (
+                        <div 
+                            key={skeleton} 
+                            className="w-full h-32 bg-zinc-900/40 animate-pulse rounded-2xl border border-zinc-800/50"
+                        />
+                    ))
+                ) : projects.length > 0 ? (
                     projects.map((project) => (
                         <AdminProjectItem 
                             key={project.id} 
@@ -66,6 +77,7 @@ const AdminProject = () => {
                     </div>
                 )}
             </div>
+            
 
             {/* ======== MODAL COMPONENT ======== */}
             <AdminProjectModal 

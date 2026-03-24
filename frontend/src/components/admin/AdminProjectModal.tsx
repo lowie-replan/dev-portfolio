@@ -6,6 +6,7 @@ interface AdminProjectModalProps {
     isSaving: boolean;
     isEditing: boolean;
     onSubmit: (e: React.FormEvent) => Promise<void>;
+
     // Values
     title: string;
     setTitle: (val: string) => void;
@@ -14,10 +15,12 @@ interface AdminProjectModalProps {
     techStackArray: any[];
     developmentTypeArray: string[];
     previewUrl: string | null;
+
     // Refs
     inputRef: React.RefObject<HTMLInputElement | null>;
     techNameRef: React.RefObject<HTMLInputElement | null>;
     techColorRef: React.RefObject<HTMLInputElement | null>;
+    
     // Handlers
     onAddTech: () => void;
     onAddDevType: () => void;

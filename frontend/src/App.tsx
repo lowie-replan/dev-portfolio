@@ -10,7 +10,7 @@ import AdminLogin from './pages/admin/Login';
 import AdminHome from './pages/admin/Dashboard';
 import AdminProject from './pages/admin/AdminProject';
 import AdminToolkits from './pages/admin/AdminToolkits';
-import AdminCerts from './pages/admin/AdminCerts';
+import AdminCerts from './pages/admin/AdminCredential';
 import AdminLayout from './pages/admin/AdminLayout';
 
 const Portfolio = () => {
