@@ -1,4 +1,5 @@
 import { FaPlus, FaEdit, FaTrash, FaLaptopCode, FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const toolkitData = [
     {title: "toolkit 1"},
@@ -17,7 +18,14 @@ const toolkitData = [
 const AdminToolkits = () => {
     return (
         <div className="bg-background  min-h-screen px-8 lg:px-12 mt-8">
-            <div className="flex gap-2 items-center text-zinc-600 mb-4 hover:cursor-pointer"><FaArrowLeft/><span>Back to Dashboard</span></div>
+
+            <Link to={"/Admin/Dashboard"}>
+                <div className="flex gap-2 items-center text-zinc-600 mb-4 hover:cursor-pointer hover:text-zinc-400 transition-colors duration-300">
+                    <FaArrowLeft/>
+                    <span>Back to Dashboard</span>
+                </div>
+            </Link>
+
             <div className="flex justify-between mb-8">
                 <div className="flex items-center gap-2 md:gap-4 text-white text-xl md:text-3xl">
                     <span><FaLaptopCode/></span>
