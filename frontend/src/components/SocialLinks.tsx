@@ -6,7 +6,7 @@ const SocialLinks = () => {
   const socials = [
     { id: 1, icon: <FaGithub />, href: "https://github.com/lowie-replan", label: "GitHub" },
     { id: 2, icon: <FaLinkedin />, href: "https://linkedin.com/in/lowie-replan", label: "LinkedIn" },
-    { id: 3, icon: <FaFacebook />, href: "https://facebook.com/yourusername", label: "Facebook" },
+    { id: 3, icon: <FaFacebook />, href: "https://facebook.com/lowie.replan", label: "Facebook" },
     { id: 4, icon: <FaEnvelope />, href: "mailto:replanlowiejohn@gmail.com", label: "Email" },
   ];
 

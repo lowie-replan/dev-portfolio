@@ -15,7 +15,7 @@ export const AdminCredentialItem = ({ certificates, onEdit, onDelete }: ProjectI
                 {/* ======== EDIT BUTTON ======== */}
                 <button 
                     type="button"
-                    className="text-green p-2 border border-green rounded-md hover:cursor-pointer hover:bg-green/10 transition-colors" 
+                    className="text-green p-2 bg-green/5 rounded-md hover:cursor-pointer hover:bg-green/30 hover:text-white transition-colors duration-500" 
                     onClick={() => onEdit(certificates)}>
                     <FaEdit />
                 </button>
@@ -23,7 +23,7 @@ export const AdminCredentialItem = ({ certificates, onEdit, onDelete }: ProjectI
                 {/* ======== DELETE BUTTON ======== */}
                 <button 
                     type="button"
-                    className="text-red p-2 border border-red rounded-md hover:cursor-pointer hover:bg-red/10 transition-colors" 
+                    className="text-red p-2 bg-red/10 rounded-md hover:cursor-pointer hover:bg-red hover:text-white transition-colors duration-500" 
                     onClick={() => onDelete(certificates.id)}>
                     <FaTrash />
                 </button>

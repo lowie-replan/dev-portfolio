@@ -169,6 +169,7 @@ export const AdminProjectManager = () => {
         if (!confirmed) return;
 
         try {
+            
             // ======== DELETE IMAGE IF EXISTS ========
             if (imageUrl) {
                 const path = imageUrl.split('project-thumbnails/').pop();

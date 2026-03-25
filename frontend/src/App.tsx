@@ -12,6 +12,8 @@ import AdminProject from './pages/admin/AdminProject';
 import AdminToolkits from './pages/admin/AdminToolkits';
 import AdminCerts from './pages/admin/AdminCredential';
 import AdminLayout from './pages/admin/AdminLayout';
+import AdminMessages from './pages/admin/AdminMessages';
+import ProtectedRoute from './pages/admin/ProtectedRoute';
 
 const Portfolio = () => {
   return (
@@ -55,14 +57,23 @@ const Portfolio = () => {
 function App() {
 
   return (
+
+    // ======== ROUTES ======== 
     <Router>
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/Admin" element={<AdminLayout />}>
+        <Route 
+          path="/Admin" 
+          element={
+            <ProtectedRoute>
+                <AdminLayout />
+            </ProtectedRoute>
+            }>
           <Route path="Dashboard" element={<AdminHome />} />
           <Route path="AdminProject" element={<AdminProject />} />
           <Route path="AdminToolkits" element={<AdminToolkits />} />
           <Route path="AdminCerts" element={<AdminCerts />} />
+          <Route path="AdminMessages" element={<AdminMessages />} />
         </Route>
         <Route path="/Admin/Login" element={<AdminLogin />} />
       </Routes>
