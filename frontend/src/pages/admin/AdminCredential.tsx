@@ -28,11 +28,14 @@ const AdminCerts = () => {
                 </div>
             </Link>
             
+            {/* ======== TITLE HEADER ======== */}
             <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-2 md:gap-4 text-white text-xl md:text-3xl">
                     <span><FaAward/></span>
                     <h1 className="font-bold">Credentials</h1>
                 </div>
+
+                {/* ======== ADDING NEW CREDENTIAL BUTTON ======== */}
                 <button 
                     className="
                         flex items-center gap-2 py-2 px-4 rounded-xl 
@@ -41,6 +44,8 @@ const AdminCerts = () => {
                     onClick={()=> setModalOpen(true)}><FaPlus/>Credential
                 </button>
             </div>
+
+            {/* ======== CREDENTIAL DISPLAY ======== */}
             <div className="h-[calc(100vh-240px)] overflow-y-auto scrollbar-hide flex flex-col gap-4">
                 {isLoading ? (
                     [1, 2, 3, 4].map((skeleton) => (

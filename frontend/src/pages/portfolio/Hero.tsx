@@ -5,7 +5,7 @@ interface HeroProps {
   name: string;
 }
 
-const effects = "rounded-lg hover:cursor-pointer hover:shadow-[0_0_20px_0_rgba(178,250,255,0.5)] transition-all duration-300 p-2.5 px-8 mt-8 font-medium";
+const effects = "rounded-lg hover:cursor-pointer hover:scale-101 hover:shadow-[0_0_20px_0_rgba(178,250,255,0.5)] transition-all duration-300 p-2.5 px-8 mt-8 font-medium";
 
 const Hero: React.FC<HeroProps> = ({ name }) => {
 
@@ -21,20 +21,20 @@ const Hero: React.FC<HeroProps> = ({ name }) => {
 
                 {/* ======== HERO BUTTONS ======== */}
                 <div className="flex gap-3">
-                    <button className={`bg-accent ${effects}`}>View Projects</button>
-                    <button className={`bg-transparent text-accent border border-accent ${effects}`}>Download CV</button>
+                    <a href="#projects"><button className={`bg-accent ${effects}`}>View Projects</button></a>
+                    <a href="/Lowie_Replan_CV.pdf" download="Lowie_Replan_CV.pdf"><button className={`bg-transparent text-accent border border-accent ${effects}`}>Download CV</button></a>
                 </div>
                     
                 {/* ======== SOCIAL LINKS ======== */}
                 <div className='mt-8'>
-                    <SocialLinks></SocialLinks>
+                    <SocialLinks></SocialLinks> 
                 </div>
             </div>
 
             {/* ======== HERO PICTURE ======== */}
             <div className="flex-1 flex justify-center order-1 lg:order-2">
                 <img 
-                src="./images/Personal_Logo.png" 
+                src="./images/Profile_Picture.jpg" 
                 alt="Lowie John Replan" 
                 className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-[4px] border-accent shadow-[0_0_30px_0_rgba(178,250,255,1)] animate-pulse"
                 />

@@ -32,8 +32,8 @@ const Footer = () => {
                         <SocialLinks/>
                     </div>
                 </div>
-
             </div>
+            
             {/* ======== CREDITS ======== */}
             <div>
                 <div className='text-center text-xs p-2 border-t border-white'>

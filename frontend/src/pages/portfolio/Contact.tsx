@@ -1,6 +1,27 @@
 import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { useState } from "react";
+import { supabase } from "../../lib/supabaseClient";
 
 const Contact = () => {
+
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("sending");
+
+        const { error } = await supabase
+            .from("contact_messages")
+            .insert([formData]);
+
+        if (!error) {
+            setFormData({ name: "", email: "", message: "" });
+            setStatus("success");
+            setTimeout(() => setStatus("idle"), 3000);
+        }
+    };
+
     return (
 
         <div className="max-w-7xl mx-auto px-8 md:px-12">
@@ -27,41 +48,30 @@ const Contact = () => {
 
                 {/* ======== RIGHT COLUMN (INPUT FORMS) ======== */}
                 <div>
-                    <form className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                         <input 
-                            type="text"
-                            placeholder="Name"
-                            className="
-                                w-full border border-accent/10 bg-transparent 
-                                focus:outline-none focus:border-accent transition-colors 
-                                text-white p-2 rounded-lg
-                            " 
+                            type="text" required placeholder="Name"
+                            value={formData.name}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            className="w-full border border-accent/10 bg-transparent focus:border-accent text-white p-2 rounded-lg outline-none" 
                         />
-
                         <input 
-                            type="email"
-                            placeholder="Email"
-                            className="
-                                w-full border border-accent/10 bg-transparent 
-                                focus:outline-none focus:border-accent transition-colors 
-                                text-white p-2 rounded-lg
-                            " 
+                            type="email" required placeholder="Email"
+                            value={formData.email}
+                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            className="w-full border border-accent/10 bg-transparent focus:border-accent text-white p-2 rounded-lg outline-none" 
                         />
-
                         <textarea 
-                            placeholder="Type a message..."
-                            rows={4}
-                            className="
-                                w-full border border-accent/10 bg-transparent 
-                                focus:outline-none focus:border-accent transition-colors 
-                                text-white p-2 rounded-lg"
-                            >
-                        </textarea>
-                        <button className="
-                            p-3 bg-accent rounded-xl hover:scale-102 
-                            transition-all duration-500 hover:shadow-[0_0_15px_0_rgba(178,250,255,0.2)]"
-                            >
-                            Send Message
+                            placeholder="Type a message..." required rows={4}
+                            value={formData.message}
+                            onChange={(e) => setFormData({...formData, message: e.target.value})}
+                            className="w-full border border-accent/10 bg-transparent focus:border-accent text-white p-2 rounded-lg outline-none"
+                        />
+                        <button 
+                            disabled={status === "sending"}
+                            className="p-3 bg-accent text-background rounded-xl w-full hover:cursor-pointer hover:shadow-[0_0_10px_0_rgba(178,250,255,0.2)] hover:scale-101 transition-all disabled:opacity-50"
+                        >
+                            {status === "sending" ? "Sending..." : status === "success" ? "Message Sent!" : "Send Message"}
                         </button>
                     </form>
                 </div>

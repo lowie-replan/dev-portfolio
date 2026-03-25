@@ -32,8 +32,9 @@ const AdminCredentialDisplay = () => {
         );
     };
 
-
     return (
+
+        // ======== CREDENTIAL CARDS ======== 
         <div className="flex gap-5 flex-col md:flex-row md:flex-wrap">
             {credentials.map((data) => (
                 <div className="border border-accent/10 items-center px-4 py-2 rounded-xl bg-accent/5 text-sm md:text-base">
