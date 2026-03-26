@@ -7,7 +7,7 @@ const Footer = () => {
 
                 {/* ======== FOOTER CONTENT ======== */}
                 <div className='flex flex-col mb-5 items-center text-center'>
-                    <p className='mb-2 italic text-xs text-zinc-600'>"The computer was born to solve problems that did not exist before."— Bill Gates</p>
+                    <p className='mb-2 italic text-sm bg-gradient-to-r from-[#7ebefe] to-[#b2faff] bg-clip-text text-transparent'>"Simplicitas est Ultima Sophisticatio'"</p>
                     <a href="#home" className='flex flex-col text-center items-center'>
                         <img src="./images/Personal_Logo.png" className="w-10 h-10 object-cotain mb-2 hover:cursor-pointer" alt="" />
                         <div className="text-bold text-accent font-semibold">Lowie John Replan</div>

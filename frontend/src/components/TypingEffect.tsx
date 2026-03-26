@@ -51,7 +51,7 @@ const TypingEffect = () => {
   return (
 
     // ======== DISPLAY TYPING TEXT ========
-    <span className="role text-white font-medium text-xl md:text-2xl">
+    <span className="role text-white text-2xl lg:text-5xl font-semibold font-mono">
       {text}
       <span className="animate-blink">|</span>
     </span>
