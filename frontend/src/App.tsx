@@ -24,7 +24,7 @@ const Portfolio = () => {
 
       {/* ======== HERO SECTION ======== */}
       <section id='home'>
-        <Hero name="Lowie John Replan"/>
+        <Hero/>
       </section>
 
       {/* ======== ABOUT SECTION ======== */}
