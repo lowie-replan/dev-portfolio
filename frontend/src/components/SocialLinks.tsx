@@ -21,7 +21,7 @@ const SocialLinks = () => {
           target="_blank"   
           rel="noopener noreferrer"
           aria-label={social.label}
-          className="text-2xl text-white hover:text-accent transition-all duration-300 hover:scale-130"
+          className="text-3xl text-white hover:text-accent transition-all duration-300 hover:scale-130"
         >
           {social.icon}
         </a>
