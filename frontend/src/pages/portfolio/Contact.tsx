@@ -1,6 +1,7 @@
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
@@ -11,14 +12,35 @@ const Contact = () => {
         e.preventDefault();
         setStatus("sending");
 
-        const { error } = await supabase
-            .from("contact_messages")
-            .insert([formData]);
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            title: 'New Portfolio Inquiry',
+        };
 
-        if (!error) {
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAIL_SERVICE_ID, 
+                import.meta.env.VITE_EMAIL_TEMPLATE_ID, 
+                templateParams, 
+                import.meta.env.VITE_EMAIL_PUBLIC_KEY
+            );
+
+            const { error } = await supabase
+                .from("contact_messages")
+                .insert([formData]);
+
+            if (error) throw error;
+
             setFormData({ name: "", email: "", message: "" });
             setStatus("success");
             setTimeout(() => setStatus("idle"), 3000);
+
+        } catch (err) {
+            console.error("Form submission failed:", err);
+            setStatus("idle");
+            alert("Failed to send message. Please try again.");
         }
     };
 

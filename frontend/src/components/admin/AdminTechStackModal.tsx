@@ -7,12 +7,11 @@ interface TechStackModalProps {
     isEditing: boolean;
     onSubmit: (e: React.FormEvent) => Promise<void>;
 
-    // Values
     name: string;
     setName: (val: string) => void;
-    selectedDomains: string[]; // e.g. ["Web Development"]
+    selectedDomains: string[];
     setSelectedDomains: (val: string[]) => void;
-    selectedSections: string[]; // e.g. ["Frameworks & Tech"]
+    selectedSections: string[];
     setSelectedSections: (val: string[]) => void;
     color: string;
     setColor: (val: string) => void;
@@ -62,7 +61,7 @@ const AdminTechStackModal = ({
 
                 <form onSubmit={onSubmit} className="flex flex-col gap-6">
 
-                    {/* NAME & COLOR ROW */}
+                    {/* ======== STACK NAME AND COLOR ======== */}
                     <div className="grid grid-cols-4 gap-4">
                         <div className="col-span-3 flex flex-col gap-2">
                             <label className="text-zinc-500 text-sm">Technology Name</label>
@@ -85,7 +84,7 @@ const AdminTechStackModal = ({
                         </div>
                     </div>
 
-                    {/* DOMAINS (Checkboxes) */}
+                    {/* ======== DOMAINS ======== */}
                     <div className="flex flex-col gap-3">
                         <label className="text-zinc-500 text-sm font-semibold">Belongs to (Domains)</label>
                         <div className="grid grid-cols-2 gap-2">
@@ -103,7 +102,7 @@ const AdminTechStackModal = ({
                         </div>
                     </div>
 
-                    {/* SECTIONS (Checkboxes) */}
+                    {/* ======== SECTIONS ======== */}
                     <div className="flex flex-col gap-3">
                         <label className="text-zinc-500 text-sm font-semibold">Section Category</label>
                         <div className="grid grid-cols-2 gap-2">
