@@ -23,7 +23,7 @@ Bash: git clone https://github.com/lowie-replan/dev-portfolio.git
 
 **Tech Stack**
 
-Frontend: React 18 with TypeScript
+Frontend: React + TypeScript
 
 Styling: Tailwind CSS
 
