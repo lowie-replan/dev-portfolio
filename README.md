@@ -17,7 +17,7 @@ Contact Integration: Functional contact form powered by Supabase/PostgREST.
 
 **Clone the repository:**
 
-Bash: git clone https://github.com/your-username/portfolio-2026.git
+Bash: git clone https://github.com/lowie-replan/dev-portfolio.git
 
 ---
 
