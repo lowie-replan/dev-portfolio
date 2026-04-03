@@ -1,5 +1,6 @@
 import { supabase } from "../../lib/supabaseClient";
 import { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 const AdminProjectDisplay = () => {
 
@@ -48,7 +49,11 @@ const AdminProjectDisplay = () => {
                         <img 
                             src={data.image_url} 
                             alt={data.title} 
-                            className="w-full h-auto aspect-video object-cover rounded-xl border border-accent/10"
+                            className="
+                                w-full h-auto aspect-video 
+                                object-cover rounded-xl border 
+                                border-accent/10
+                            "
                         />
                     </div>
 
@@ -76,22 +81,33 @@ const AdminProjectDisplay = () => {
 
                         {/* ======== PROJECT TECH TAGS ======== */}
                         <span className="text-white text-sm font-bold mt-5">Tools & Frameworks</span>
-                        <div className="flex flex-wrap gap-2">
-                            {data.tech_stack?.map((stack: any, i: number) => (
-                                <div
-                                key={i}
-                                style={{
-                                    backgroundColor: `${stack.color}1A`,
-                                    borderColor: `${stack.color}33`
-                                }}
-                                className="px-3 py-1 rounded-md border flex items-center">
-                                    <span 
-                                    style={{color:`${stack.color}`}}
-                                    className="text-xs font-medium">
-                                        {stack.name}
-                                    </span>
-                                </div>
-                            ))}
+                        <div className="flex gap-2 justify-between">
+                            <div className="flex flex-wrap gap-2">
+                                {data.tech_stack?.map((stack: any, i: number) => (
+                                    <div
+                                    key={i}
+                                    style={{
+                                        backgroundColor: `${stack.color}1A`,
+                                        borderColor: `${stack.color}33`
+                                    }}
+                                    className="px-3 py-1 rounded-md border flex items-center">
+                                        <span 
+                                        style={{color:`${stack.color}`}}
+                                        className="text-xs font-medium">
+                                            {stack.name}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex items-end">
+                                <a 
+                                    href={data.link}
+                                    className="text-3xl text-white hover:text-accent 
+                                    transition-all duration-300 hover:cursor-pointer"
+                                    >
+                                    <FaGithub/>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
