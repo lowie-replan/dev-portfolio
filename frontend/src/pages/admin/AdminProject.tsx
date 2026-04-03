@@ -16,6 +16,7 @@ const AdminProject = () => {
 
         // ======== STATES ========
         title, setTitle,
+        link, setLink,
         description, setDescription,
         techStackArray,
         developmentTypeArray,
@@ -91,6 +92,8 @@ const AdminProject = () => {
                 title={title}
                 setTitle={setTitle}
                 description={description}
+                link={link}
+                setLink={setLink}
                 setDescription={setDescription}
                 techStackArray={techStackArray}
                 developmentTypeArray={developmentTypeArray}

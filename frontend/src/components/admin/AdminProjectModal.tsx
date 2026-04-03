@@ -12,6 +12,8 @@ interface AdminProjectModalProps {
     setTitle: (val: string) => void;
     description: string;
     setDescription: (val: string) => void;
+    link: string;
+    setLink: (val: string) => void;
     techStackArray: any[];
     developmentTypeArray: string[];
     previewUrl: string | null;
@@ -37,6 +39,7 @@ const AdminProjectModal = ({
     isEditing,
     onSubmit,
     title, setTitle,
+    link, setLink,
     description, setDescription,
     techStackArray,
     developmentTypeArray,
@@ -172,6 +175,22 @@ const AdminProjectModal = ({
                                 </div>
                             ))}
                         </div>
+                    </div>
+
+                    {/* ======== GITHUB LINK ======== */}
+                    <div className="flex flex-col gap-2 mt-4">
+                        <label className="text-zinc-500">Github Link</label>
+                        <input 
+                            type="text"
+                            required
+                            value={link}
+                            onChange={(e) => setLink(e.target.value)}
+                            className="
+                                w-full border border-accent/10 bg-background 
+                                focus:outline-none focus:border-accent 
+                                transition-colors text-white p-2 rounded-lg text-sm
+                            " 
+                        />
                     </div>
 
                     {/* ======== IMAGE UPLOAD ======== */}

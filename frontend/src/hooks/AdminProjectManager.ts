@@ -15,6 +15,7 @@ export const AdminProjectManager = () => {
     const [isSaving, setIsSaving] = useState(false);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [link, setLink] = useState("");
 
 
     // ======== MODAL STATES ========
@@ -65,6 +66,7 @@ export const AdminProjectManager = () => {
         setSelectedImage(null);
         setPreviewUrl(null);
         setModalOpen(false);
+        setLink("");
     };
 
     const handleEdit = (project: any) => {
@@ -75,6 +77,7 @@ export const AdminProjectManager = () => {
         setDevelopmentTypeArray(project.dev_types || []);
         setPreviewUrl(project.image_url);
         setModalOpen(true);
+        setLink(project.link);
     };
 
     
@@ -122,6 +125,7 @@ export const AdminProjectManager = () => {
             const projectData = {
                 title: title,
                 description: description,
+                link: link,
                 dev_types: developmentTypeArray,
                 tech_stack: techStackArray,
                 image_url: finalImageUrl || previewUrl, 
@@ -252,6 +256,7 @@ export const AdminProjectManager = () => {
         isSaving,
         editingId,
         title, setTitle,
+        link, setLink,
         description, setDescription,
         techStackArray,
         developmentTypeArray,
